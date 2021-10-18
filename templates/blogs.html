@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block header %}
+  <!-- Page Header-->
+  <header class="masthead" style="background-image: url({{ url_for('static', filename='assets/img/home-bg.jpg') }})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>自助餐專區</h1>
+                    <span class="subheading">挑選您的餐廳</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<!-- Main Content-->
+<div class="container">
+     <div class="row">
+         <div class="col">
+             <b>buffet_name</b>
+        </div>
+        <div class="col">
+            <b>buffet_url</b>
+        </div>
+        <div class="col">
+            <b>buffet_address</b>        
+         </div>
+        <div class="col">
+            <b>buffet_cuisine</b>
+        </div>     
+     </div>
+    {% for row in  entries  %}
+    <div class="row">
+        <div class="col">
+                 {{ row["buffet_name"] }}
+        </div>
+        <div class="col">
+                 {{ row["buffet_url"] }}
+        </div>
+        <div class="col">
+                 {{ row["buffet_address"] }}
+        </div>
+        <div class="col">
+                 {{ row["buffet_cuisine"] }}
+        </div>     
+    </div><!-- end row -->
+    {% endfor %}
+</div><!-- end container -->
+<hr />
+ </div>
+{% endblock %}
